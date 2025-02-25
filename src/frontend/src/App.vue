@@ -18,10 +18,38 @@ import { RouterLink, RouterView } from 'vue-router'
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
-                <button class="btn btn-info fix" type="button">Fixkosten</button>
+                <button class="btn btn-info fix" type="button" data-bs-toggle="modal" data-bs-target="#fixedCostsModal">
+                    Fixkosten
+                </button>
             </ul>
         </div>
     </nav>
+
+    <div class="modal fade" id="fixedCostsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="inputAccountCosts">Kontokosten / Jahr:</label>
+                        <input type="text" class="form-control" id="inputAccountCosts">
+
+                        <label for="inputAccountCosts">Wasserpreis pro m³:</label>
+                        <input type="text" class="form-control" id="inputWaterPrice">
+
+                        <label for="inputAccountCosts">Grundgebühr:</label>
+                        <input type="text" class="form-control" id="inputAccountCosts">
+
+                        <label for="inputAccountCosts">Portokosten:</label>
+                        <input type="text" class="form-control" id="inputPortoCosts">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                    <button type="button" class="btn btn-info">Speichern</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <RouterView />
 </template>
