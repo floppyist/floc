@@ -17,6 +17,9 @@ import { RouterLink, RouterView } from 'vue-router'
                     <RouterLink class="nav-link" to="/electricity">Strom</RouterLink>
                 </li>
             </ul>
+            <ul class="navbar-nav ms-auto">
+                <button class="btn btn-info" type="button">Fixkosten</button>
+            </ul>
         </div>
     </nav>
 

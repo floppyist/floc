@@ -11,6 +11,7 @@
                 <th scope="col">Telefon</th>
                 <th scope="col">Alter Wasserstand</th>
                 <th scope="col">Neuer Wasserstand</th>
+                <th scope="col">Entstandene Kosten</th>
             </tr>
         </thead>
         <tbody>
