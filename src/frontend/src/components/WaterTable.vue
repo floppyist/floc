@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered">
         <thead>
             <tr>
                 <th scope="col" class="text-center">Aktiv</th>
@@ -16,8 +16,10 @@
         </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td>1</td>
+                <td>
+                    <input type="checkbox" value="">
+                </td>
+                <td class="text-center">1</td>
                 <td>Max Mustermann</td>
                 <td>Musterweg 3 09116 Musterstadt</td>
                 <td>0001/00000001</td>

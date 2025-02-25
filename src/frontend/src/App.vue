@@ -1,5 +1,9 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+
+function test() {
+    console.log(document.getElementById("inputAccountCosts").value);
+}
 </script>
 
 <template>
@@ -33,19 +37,22 @@ import { RouterLink, RouterView } from 'vue-router'
                         <label for="inputAccountCosts">Kontokosten / Jahr:</label>
                         <input type="text" class="form-control" id="inputAccountCosts">
 
-                        <label for="inputAccountCosts">Wasserpreis pro m³:</label>
+                        <br>
+                        <label for="inputWaterPrice">Wasserpreis pro m³:</label>
                         <input type="text" class="form-control" id="inputWaterPrice">
 
+                        <br>
                         <label for="inputAccountCosts">Grundgebühr:</label>
-                        <input type="text" class="form-control" id="inputAccountCosts">
+                        <input type="text" class="form-control" id="inputBasicFee">
 
+                        <br>
                         <label for="inputAccountCosts">Portokosten:</label>
                         <input type="text" class="form-control" id="inputPortoCosts">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                    <button type="button" class="btn btn-info">Speichern</button>
+                    <button @click="test()" type="button" class="btn btn-info">Speichern</button>
                 </div>
             </div>
         </div>
