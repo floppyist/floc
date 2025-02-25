@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col" class="text-center">Aktiv</th>
@@ -15,6 +15,16 @@
             </tr>
         </thead>
         <tbody>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Max Mustermann</td>
+                <td>Musterweg 3 09116 Musterstadt</td>
+                <td>0001/00000001</td>
+                <td>750,33 m³</td>
+                <td>840,12 m³</td>
+                <td>94,20€</td>
+            </tr>
         </tbody>
     </table>
 </template>

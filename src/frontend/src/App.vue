@@ -18,7 +18,7 @@ import { RouterLink, RouterView } from 'vue-router'
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
-                <button class="btn btn-info" type="button">Fixkosten</button>
+                <button class="btn btn-info fix" type="button">Fixkosten</button>
             </ul>
         </div>
     </nav>
@@ -26,4 +26,12 @@ import { RouterLink, RouterView } from 'vue-router'
     <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped>
+.navbar-brand {
+    margin-left: 8px;
+}
+
+.fix {
+    margin-right: 8px;
+}
+</style>
