@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 
 function test() {
-    console.log(document.getElementById("inputAccountCosts").value);
+    console.log('Pressed [Speichern]');
 }
 </script>
 

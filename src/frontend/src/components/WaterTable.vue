@@ -1,4 +1,14 @@
-<script setup></script>
+<script setup>
+import axios from 'axios';
+import { onBeforeMount } from 'vue';
+
+onBeforeMount(() => {
+    axios.get('/api/clients/getAll')
+        .then(res => {
+            console.log(res.data);
+        });
+});
+</script>
 
 <template>
     <table class="table table-hover table-bordered">

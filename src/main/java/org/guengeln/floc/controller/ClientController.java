@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.guengeln.floc.model.Client;
 import org.guengeln.floc.service.ClientService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/clients")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ClientController {
 
     private final ClientService clientService;
