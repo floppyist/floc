@@ -5,13 +5,22 @@ import { onBeforeMount } from 'vue';
 onBeforeMount(() => {
     axios.get('/api/clients/getAll')
         .then(res => {
-            console.log(res.data);
+            var table = document.getElementById("tblElectricity");
+            var btnNew = document.getElementById("btnNewClient");
+
+            if (res.data.length == 0) {
+                table.hidden = true;
+                btnNew.hidden = false;
+            } else {
+                table.hidden = false;
+                btnNew.hidden = true;
+            }
         });
 });
 </script>
 
 <template>
-    <table class="table table-hover table-bordered">
+    <table class="table table-hover table-bordered" id="tblElectricity">
         <thead>
             <tr>
                 <th scope="col" class="text-center">Aktiv</th>
@@ -39,6 +48,14 @@ onBeforeMount(() => {
             </tr>
         </tbody>
     </table>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-info fix" type="button" id="btnNewClient">
+                Neuen Mandanten anlegen
+            </button>
+
+        </div>
+    </div>
 </template>
 
 <style scoped></style>
