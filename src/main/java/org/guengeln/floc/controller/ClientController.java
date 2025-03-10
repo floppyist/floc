@@ -22,6 +22,7 @@ public class ClientController {
     @RequestMapping("/create")
     public Client createClient() {
         Client client = new Client();
+        client.setActive(true);
         client.setName("Jane Doe");
         client.setParcel(2);
         client.setAddress("Güngelstr. 1337 01234 Musterstadt");

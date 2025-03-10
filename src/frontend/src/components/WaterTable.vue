@@ -5,15 +5,51 @@ import { onBeforeMount } from 'vue';
 onBeforeMount(() => {
     axios.get('/api/clients/getAll')
         .then(res => {
-            var table = document.getElementById("tblElectricity");
-            var btnNew = document.getElementById("btnNewClient");
+            var table = document.getElementById("tblElectricity").getElementsByTagName('tbody')[0];
+            console.log(table);
 
             if (res.data.length == 0) {
                 table.hidden = true;
-                btnNew.hidden = false;
             } else {
                 table.hidden = false;
-                btnNew.hidden = true;
+
+                for (const element of res.data) {
+                    var newRow = table.insertRow();
+                    var newCell;
+                    var newText;
+
+                    newCell = newRow.insertCell(0);
+                    newText = document.createTextNode(element.active);
+                    newCell.appendChild(newText);
+
+                    newCell = newRow.insertCell(1);
+                    newText = document.createTextNode(element.parcel);
+                    newCell.appendChild(newText);
+
+                    newCell = newRow.insertCell(2);
+                    newText = document.createTextNode(element.name);
+                    newCell.appendChild(newText);
+
+                    newCell = newRow.insertCell(3);
+                    newText = document.createTextNode(element.name);
+                    newCell.appendChild(newText);
+
+                    newCell = newRow.insertCell(4);
+                    newText = document.createTextNode(element.phone);
+                    newCell.appendChild(newText);
+
+                    newCell = newRow.insertCell(5);
+                    newText = document.createTextNode(element.waterlevel_old);
+                    newCell.appendChild(newText);
+
+                    newCell = newRow.insertCell(6);
+                    newText = document.createTextNode(element.waterlevel_new);
+                    newCell.appendChild(newText);
+
+                    newCell = newRow.insertCell(7);
+                    newText = document.createTextNode('');
+                    newCell.appendChild(newText);
+                }
             }
         });
 });
@@ -34,27 +70,13 @@ onBeforeMount(() => {
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    <input type="checkbox" value="">
-                </td>
-                <td class="text-center">1</td>
-                <td>Max Mustermann</td>
-                <td>Musterweg 3 09116 Musterstadt</td>
-                <td>0001/00000001</td>
-                <td>750,33 m³</td>
-                <td>840,12 m³</td>
-                <td>94,20€</td>
-            </tr>
         </tbody>
     </table>
-    <div class="row">
-        <div class="col text-center">
-            <button class="btn btn-info fix" type="button" id="btnNewClient" data-bs-toggle="modal"
-                data-bs-target="#newClientModal">
-                Neuen Mandanten anlegen
-            </button>
-        </div>
+    <div class="col text-center">
+        <button class="btn btn-info fix" type="button" id="btnNewClient" data-bs-toggle="modal"
+            data-bs-target="#newClientModal">
+            Neuen Mandanten anlegen
+        </button>
     </div>
 </template>
 

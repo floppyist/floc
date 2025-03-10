@@ -1,6 +1,5 @@
 package org.guengeln.floc;
 
-import org.guengeln.floc.service.ClientService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
