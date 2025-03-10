@@ -1,9 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
-function test() {
+function btnFixedCostsSave() {
     console.log('Pressed [Speichern]');
 }
+
 </script>
 
 <template>
@@ -29,7 +30,7 @@ function test() {
         </div>
     </nav>
 
-    <div class="modal fade" id="fixedCostsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="fixedCostsModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
@@ -52,7 +53,48 @@ function test() {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                    <button @click="test()" type="button" class="btn btn-info">Speichern</button>
+                    <button @click="btnFixedCostsSave()" type="button" class="btn btn-info">Speichern</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="newClientModal" tbindex="-1" data-bs-target="#newClientModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="inputClientActive">Aktiv:</label>
+                        <input type="text" class="form-control" id="inputClientActive">
+
+                        <br>
+                        <label for="inputClientParcel">Parzelle:</label>
+                        <input type="text" class="form-control" id="inputClientParcel">
+
+                        <br>
+                        <label for="inputClientName">Name:</label>
+                        <input type="text" class="form-control" id="inputClientName">
+
+                        <br>
+                        <label for="inputClientAddress">Adresse:</label>
+                        <input type="text" class="form-control" id="inputClientAddress">
+
+                        <br>
+                        <label for="inputClientPhone">Telefon:</label>
+                        <input type="text" class="form-control" id="inputClientPhone">
+
+                        <br>
+                        <label for="inputClientWaterlevelOld">Wasserstand (alt):</label>
+                        <input type="text" class="form-control" id="inputClientWaterlevelOld"></input>
+
+                        <br>
+                        <label for="inputClientWaterlevelNew">Wasserstand (alt):</label>
+                        <input type="text" class="form-control" id="inputClientWaterlevelNew"></input>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                    <button @click="showNewClientModal()" type="button" class="btn btn-info">Speichern</button>
                 </div>
             </div>
         </div>

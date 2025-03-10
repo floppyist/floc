@@ -50,10 +50,10 @@ onBeforeMount(() => {
     </table>
     <div class="row">
         <div class="col text-center">
-            <button class="btn btn-info fix" type="button" id="btnNewClient">
+            <button class="btn btn-info fix" type="button" id="btnNewClient" data-bs-toggle="modal"
+                data-bs-target="#newClientModal">
                 Neuen Mandanten anlegen
             </button>
-
         </div>
     </div>
 </template>
