@@ -5,6 +5,22 @@ function btnFixedCostsSave() {
     console.log('Pressed [Speichern]');
 }
 
+function btnNewClient() {
+    var inputActive = document.getElementById('inputClientActive');
+    var inputParcel = document.getElementById('inputClientParcel');
+    var inputName = document.getElementById('inputClientName');
+    var inputPhone = document.getElementById('inputClientPhone');
+    var inputWaterlevelOld = document.getElementById('inputClientWaterlevelOld');
+    var inputWaterlevelNew = document.getElementById('inputClientWaterlevelNew');
+
+    console.log(inputActive.value);
+    console.log(inputParcel.value);
+    console.log(inputName.value);
+    console.log(inputPhone.value);
+    console.log(inputWaterlevelOld.value);
+    console.log(inputWaterlevelNew.value);
+}
+
 </script>
 
 <template>
@@ -65,7 +81,10 @@ function btnFixedCostsSave() {
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="inputClientActive">Aktiv:</label>
-                        <input type="text" class="form-control" id="inputClientActive">
+                        <select class="form-control" id="inputClientActive">
+                            <option>Ja</option>
+                            <option>Nein</option>
+                        </select>
 
                         <br>
                         <label for="inputClientParcel">Parzelle:</label>
@@ -80,7 +99,7 @@ function btnFixedCostsSave() {
                         <input type="text" class="form-control" id="inputClientAddress">
 
                         <br>
-                        <label for="inputClientPhone">Telefon:</label>
+                        <label for="inputClientPhone">Telefon (optional):</label>
                         <input type="text" class="form-control" id="inputClientPhone">
 
                         <br>
@@ -94,7 +113,7 @@ function btnFixedCostsSave() {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                    <button @click="showNewClientModal()" type="button" class="btn btn-info">Speichern</button>
+                    <button @click="btnNewClient()" type="button" class="btn btn-info">Anlegen</button>
                 </div>
             </div>
         </div>
