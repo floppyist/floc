@@ -16,7 +16,7 @@ function btnNewClient() {
     var inputWaterlevelNew = document.getElementById('inputClientWaterlevelNew');
 
     const data = {
-        active: inputActive == 'Ja' ? true : false,
+        active: inputActive.value == 'Ja' ? true : false,
         parcel: inputParcel.value,
         name: inputName.value,
         address: inputAddress.value,
@@ -27,12 +27,12 @@ function btnNewClient() {
 
     axios.post('/api/clients/create', data)
         .then(function (response) {
+            location.reload();
             console.log(response);
         }).catch(function (error) {
             console.error(error);
         });
 }
-
 </script>
 
 <template>
