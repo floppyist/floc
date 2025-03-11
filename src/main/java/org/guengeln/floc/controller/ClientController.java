@@ -23,14 +23,6 @@ public class ClientController {
 
     @PostMapping("/create")
     public Client createClient(@RequestBody Client client) {
-        System.out.println(client.getActive());
-        System.out.println(client.getParcel());
-        System.out.println(client.getName());
-        System.out.println(client.getAddress());
-        System.out.println(client.getPhone());
-        System.out.println(client.getWaterlevel_old());
-        System.out.println(client.getWaterlevel_new());
-
         return clientService.saveClient(client);
     }
 
