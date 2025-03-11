@@ -5,6 +5,8 @@ import java.util.List;
 import org.guengeln.floc.model.Client;
 import org.guengeln.floc.service.ClientService;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,17 +21,15 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    @RequestMapping("/create")
-    public Client createClient() {
-        Client client = new Client();
-        client.setActive(true);
-        client.setName("Jane Doe");
-        client.setParcel(2);
-        client.setAddress("Güngelstr. 1337 01234 Musterstadt");
-        client.setPhone("0002/00000002");
-        client.setWaterlevel_old(20.3f);
-        client.setWaterlevel_new(23.5f);
-        client.setCosts(4.63f);
+    @PostMapping("/create")
+    public Client createClient(@RequestBody Client client) {
+        System.out.println(client.getActive());
+        System.out.println(client.getParcel());
+        System.out.println(client.getName());
+        System.out.println(client.getAddress());
+        System.out.println(client.getPhone());
+        System.out.println(client.getWaterlevel_old());
+        System.out.println(client.getWaterlevel_new());
 
         return clientService.saveClient(client);
     }

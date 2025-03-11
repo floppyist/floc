@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import axios from 'axios';
 
 function btnFixedCostsSave() {
     console.log('Pressed [Speichern]');
@@ -9,16 +10,27 @@ function btnNewClient() {
     var inputActive = document.getElementById('inputClientActive');
     var inputParcel = document.getElementById('inputClientParcel');
     var inputName = document.getElementById('inputClientName');
+    var inputAddress = document.getElementById('inputClientAddress');
     var inputPhone = document.getElementById('inputClientPhone');
     var inputWaterlevelOld = document.getElementById('inputClientWaterlevelOld');
     var inputWaterlevelNew = document.getElementById('inputClientWaterlevelNew');
 
-    console.log(inputActive.value);
-    console.log(inputParcel.value);
-    console.log(inputName.value);
-    console.log(inputPhone.value);
-    console.log(inputWaterlevelOld.value);
-    console.log(inputWaterlevelNew.value);
+    const data = {
+        active: inputActive == 'Ja' ? true : false,
+        parcel: inputParcel.value,
+        name: inputName.value,
+        address: inputAddress.value,
+        phone: inputPhone.value,
+        waterlevel_old: inputWaterlevelOld.value,
+        waterlevel_new: inputWaterlevelNew.value,
+    }
+
+    axios.post('/api/clients/create', data)
+        .then(function (response) {
+            console.log(response);
+        }).catch(function (error) {
+            console.error(error);
+        });
 }
 
 </script>

@@ -31,7 +31,7 @@ onBeforeMount(() => {
                     newCell.appendChild(newText);
 
                     newCell = newRow.insertCell(3);
-                    newText = document.createTextNode(element.name);
+                    newText = document.createTextNode(element.address);
                     newCell.appendChild(newText);
 
                     newCell = newRow.insertCell(4);
@@ -80,4 +80,8 @@ onBeforeMount(() => {
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+#btnNewClient {
+    margin-bottom: 15px;
+}
+</style>
