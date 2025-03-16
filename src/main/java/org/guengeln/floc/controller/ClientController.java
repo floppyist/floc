@@ -5,6 +5,8 @@ import java.util.List;
 import org.guengeln.floc.model.Client;
 import org.guengeln.floc.service.ClientService;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +31,11 @@ public class ClientController {
     @RequestMapping("/getAll")
     public List<Client> getClients() {
         return clientService.getAllClients();
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteClient(@PathVariable("id") Integer id) {
+        clientService.deleteClientById(id);
     }
 
 }

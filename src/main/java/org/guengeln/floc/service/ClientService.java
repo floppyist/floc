@@ -23,4 +23,8 @@ public class ClientService {
         return clientRepository.findAll();
     }
 
+    public void deleteClientById(Integer id) {
+        clientRepository.deleteById(id);
+    }
+
 }
