@@ -19,6 +19,7 @@ defineProps({
                 <th scope="col">Alter Wasserstand</th>
                 <th scope="col">Neuer Wasserstand</th>
                 <th scope="col">Entstandene Kosten</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +32,9 @@ defineProps({
                 <td>{{ item.waterlevel_old }}</td>
                 <td>{{ item.waterlevel_new }}</td>
                 <td>PLACEHOLDER</td>
+                <td>
+                    <a href="#">Bearbeiten</a>
+                </td>
             </tr>
         </tbody>
     </table>

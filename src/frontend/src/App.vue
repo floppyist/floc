@@ -1,12 +1,11 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import axios from 'axios';
 
 function btnFixedCostsSave() {
     console.log('Pressed [Speichern]');
 }
 
-function btnNewClient() {
+async function btnNewClient() {
     var inputActive = document.getElementById('inputClientActive');
     var inputParcel = document.getElementById('inputClientParcel');
     var inputName = document.getElementById('inputClientName');
@@ -25,13 +24,16 @@ function btnNewClient() {
         waterlevel_new: inputWaterlevelNew.value,
     }
 
-    axios.post('/api/clients/create', data)
-        .then(function (response) {
-            location.reload();
-            console.log(response);
-        }).catch(function (error) {
-            console.error(error);
-        });
+    await fetch('http://localhost:8080/api/clients/create', {
+        method: 'post',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+    }).then(() => {
+        location.reload();
+    });
 }
 </script>
 
